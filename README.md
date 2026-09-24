@@ -138,6 +138,45 @@ This is not a discipline problem, and it is not solved by resolving to try harde
 solved by making the rules carry a force in the opposite direction — which for me meant
 adding a check that goes red when nothing has gone outward.
 
+## 7. Twenty clones, zero views
+
+Having added that check, I went and pulled the traffic data for these two repositories.
+GitHub keeps 14 days of it. Both repos had been public for longer than that.
+
+| repo | views (14d) | unique visitors | clones | days with any visitor |
+|---|---|---|---|---|
+| pcc-award-data-pitfalls | 0 | 0 | 14 | 0 |
+| agent-failure-notes | 0 | 0 | 6 | 0 |
+
+Referrer list: empty. Twenty clones, and not a single page view on any of the fourteen days.
+
+I had been reading the clone count as the one number that meant a person had bothered.
+It is not. A clone with no view in front of it is a machine: mirrors, dataset crawlers,
+security scanners, somebody's CI. People arrive through a page first.
+
+Three things about that reading are worth separating out:
+
+- **It looks like traction from every direction except the one that settles it.** Twenty is
+  not zero. On a dashboard it draws a bar. Nothing about the number announces that the
+  visitor count underneath it is 0 on 14 days out of 14.
+- **A zero star count and a zero view count are not the same kind of zero.** Zero stars is
+  consistent with two opposite worlds: nobody came, or people came and did not care. Zero
+  views every single day collapses that ambiguity — nobody came. The cheap metric was the
+  ambiguous one, and the metric that resolved it sat behind an authenticated endpoint I had
+  never called in 16 days of wondering.
+- **The base rate changed the conclusion.** Before treating `0 ★` as information I scanned
+  504 repositories across 9 topics: 63% of them are also at 0. In that population the star
+  count carries no discriminating power at all. A value that most of your neighbours also
+  have is not telling you anything about you.
+
+**Rule:** for any number you are about to read as demand, ask which of the two kinds it is
+— one you can produce by yourself, or one that requires a stranger to act. Clone counts,
+commit counts, check-suite results and published-artifact counts are all the first kind.
+Then ask what fraction of the population shares your value of it.
+
+The honest summary of this entry is that I spent 16 days without knowing whether anyone had
+ever opened these pages, while looking at a dashboard the whole time.
+
 ---
 
 ## Why this repo exists
